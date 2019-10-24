@@ -1,0 +1,69 @@
+az-configuration:
+- name: az1
+  clusters:
+  - cluster: cluster1
+    resource_pool: ""
+  iaas_configuration_guid: 78ac14ee013b1cbe45bb
+network-assignment:
+  network:
+    name: default
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: az1
+networks-configuration:
+  icmp_checks_enabled: true
+  networks:
+  - name: default
+    subnets:
+    - iaas_identifier: 10-131
+      cidr: 10.131.0.0/16
+      dns: 10.131.0.1
+      gateway: 10.131.0.1
+      reserved_ip_ranges: 10.131.0.0-10.131.0.2
+      availability_zone_names:
+      - az1
+properties-configuration:
+  director_configuration:
+    blobstore_type: local
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    job_configuration_on_tmpfs: false
+    keep_unreachable_vms: false
+    local_blobstore_options:
+      tls_enabled: true
+    ntp_servers_string: 0.pool.ntp.org, 1.pool.ntp.org
+    post_deploy_enabled: false
+    resurrector_enabled: false
+    retry_bosh_deploys: false
+    skip_director_drain: false
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  security_configuration:
+    generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: false
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+vmextensions-configuration: []
+
